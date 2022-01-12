@@ -1,0 +1,64 @@
+@import url("variables.css");
+body
+{
+    background: var(--degrade);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#item
+{
+    background-color: white;
+    box-shadow: 2px 5px 10px rgba(0,0,0,0.1);
+    border-radius: 20px;
+    padding: 40px 30px 40px 30px;
+}
+h1
+{
+    font-weight: bold;
+    font-size: 32px;
+    padding-left: 10px;
+    margin-left: 30px;
+    border-left: 7px solid var(--blue);
+}
+p
+{
+    text-align: center;
+    margin: 0px;
+}
+#sign-in
+{
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-bottom: 0px;
+}
+#enter
+{
+    font-size: 14px;
+    color: #6C6C6C;
+    margin-bottom: 50px;
+}
+input::placeholder
+{
+    font-size: 12px;
+}
+label
+{
+    color: #6C6C6C;
+}
+button
+{
+    background-color: var(--blue);
+    color: white;
+    border: none;
+    height: 44px;
+    border-radius: 4px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+a
+{
+    color: var(--blue);
+}
