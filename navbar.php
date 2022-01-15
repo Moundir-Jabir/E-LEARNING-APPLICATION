@@ -9,46 +9,46 @@
     </div>
     <nav>
         <div>
-            <a href="">
-                <img src="image/Vector.svg" alt="home">
+            <a href="home.php">
+                <img src="image/Vector.svg" alt="icone-home">
                 <span>Home</span>
             </a>
         </div>
         <div>
             <a href="">
-                <img src="image/Vector-2.svg" alt="course">
+                <img src="image/Vector-2.svg" alt="icone-course">
                 <span>Course</span>
             </a>
         </div>
         <div>
-            <a href="">
-                <img src="image/Vector-3.svg" alt="students">
+            <a href="students.php">
+                <img src="image/Vector-3.svg" alt="icone-students">
                 <span>Students</span>
             </a>
         </div>
         <div>
-            <a href="">
-                <img src="image/Vector-7.svg" alt="payment">
+            <a href="payment.php">
+                <img src="image/Vector-7.svg" alt="icone-payment">
                 <span>Payment</span>
             </a>
         </div>
         <div>
             <a href="">
-                <img src="image/Vector-4.svg" alt="report">
+                <img src="image/Vector-4.svg" alt="icone-report">
                 <span>Report</span>
             </a>
         </div>
         <div>
             <a href="">
-                <img src="image/Vector-5.svg" alt="settings">
+                <img src="image/Vector-5.svg" alt="icone-settings">
                 <span>Settings</span>
             </a>
         </div>
     </nav>
     <div id="logout">
-        <a href="">
+        <a href="index.php">
             <span>Logout</span>
-            <img src="image/Vector-6.svg" alt="logout">
+            <img src="image/Vector-6.svg" alt="icone-logout">
         </a>
     </div>
 </div>

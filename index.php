@@ -16,7 +16,7 @@
                 <h1>E-classe</h1>
                 <p id="sign-in">SIGN IN</p>
                 <p id="enter">Enter your credentials to access your account</p>
-                <form>
+                <form action="home.php">
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
                         <input type="email" required class="form-control form-control-lg" id="email" placeholder="Enter your email">
