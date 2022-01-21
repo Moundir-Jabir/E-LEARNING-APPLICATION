@@ -1,3 +1,12 @@
+<?php
+    $payments = [
+        ["Name" => "Moundir", "Payment_Schedule" => "First", "Bill_Number" => 12223, "Amount_Paid" => "DHS 100,000", "Balance amount" => "DHS 500,000", "Date" => "05-Jan, 2022"],
+        ["Name" => "Said", "Payment_Schedule" => "Second", "Bill_Number" => 22223, "Amount_Paid" => "DHS 300,000", "Balance amount" => "DHS 100,000", "Date" => "15-Jan, 2022"],
+        ["Name" => "Ahmed", "Payment_Schedule" => "Third", "Bill_Number" => 44223, "Amount_Paid" => "DHS 400,000", "Balance amount" => "DHS 200,000", "Date" => "25-Jan, 2022"],
+        ["Name" => "Hamza", "Payment_Schedule" => "Last", "Bill_Number" => 45512223, "Amount_Paid" => "DHS 200,000", "Balance amount" => "DHS 150,000", "Date" => "07-Fev, 2022"]
+    ];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,47 +41,18 @@
                         <th scope="col">Bill Number</th>
                         <th scope="col">Amount Paid</th>
                         <th scope="col">Balance amount</th>
-                        <th scope="col">Date</th>
-                        <th scope="col"></th>
+                        <th colspan="2" scope="col">Date</th>
                     </tr>
                 </thead>
                 <tbody class="table-light">
-                    <tr>
-                        <td>Karthi</td>
-                        <td>First</td>
-                        <td>00012223</td>
-                        <td>DHS 100,000</td>
-                        <td>DHS 500,000</td>
-                        <td>05-Jan, 2022</td>
-                        <td><img src="image/oeuil.svg" alt="icone-oeuil"></td>
-                    </tr>
-                    <tr>
-                        <td>Karthi</td>
-                        <td>First</td>
-                        <td>00012223</td>
-                        <td>DHS 100,000</td>
-                        <td>DHS 500,000</td>
-                        <td>05-Jan, 2022</td>
-                        <td><img src="image/oeuil.svg" alt="icone-oeuil"></td>
-                    </tr>
-                    <tr>
-                        <td>Karthi</td>
-                        <td>First</td>
-                        <td>00012223</td>
-                        <td>DHS 100,000</td>
-                        <td>DHS 500,000</td>
-                        <td>05-Jan, 2022</td>
-                        <td><img src="image/oeuil.svg" alt="icone-oeuil"></td>
-                    </tr>
-                    <tr>
-                        <td>Karthi</td>
-                        <td>First</td>
-                        <td>00012223</td>
-                        <td>DHS 100,000</td>
-                        <td>DHS 500,000</td>
-                        <td>05-Jan, 2022</td>
-                        <td><img src="image/oeuil.svg" alt="icone-oeuil"></td>
-                    </tr>
+                    <?php foreach($payments as $payment){ ?>
+                        <tr>
+                            <?php foreach ($payment as $key => $value){ ?>
+                                <td> <?php echo $value; ?> </td>
+                            <?php } ?>
+                            <td><img src="image/oeuil.svg" alt="icone-oeuil"></td>
+                        </tr>
+                    <?php } ?>
                 </tbody>
             </table>
         </div>

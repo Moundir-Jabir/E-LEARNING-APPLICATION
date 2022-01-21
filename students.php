@@ -1,3 +1,13 @@
+<?php
+    $students = [
+        ["name" => "Moundir", "email" => "mondirjabir@gmail.com", "phone" => "0623674588", "enroll_number" => 1234567305477760, "date_admission" => "08-Dec, 2021"],
+        ["name" => "Said", "email" => "said@gmail.com", "phone" => "0623994588", "enroll_number" => 1233405477760, "date_admission" => "08-Nov, 2021"],
+        ["name" => "Yassin", "email" => "yasin@gmail.com", "phone" => "0629999588", "enroll_number" => 344645477760, "date_admission" => "08-Dec, 2020"],
+        ["name" => "Hamza", "email" => "hamza@gmail.com", "phone" => "0699884588", "enroll_number" => 1567305477760, "date_admission" => "18-Dec, 2021"],
+        ["name" => "Ahmed", "email" => "ahmed@gmail.com", "phone" => "0623674008", "enroll_number" => 123456730560, "date_admission" => "08-Jan, 2021"]
+    ];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,40 +38,26 @@
             <table class="table table-borderless">
                 <thead>
                     <tr>
-                        <th scope="col"></th>
-                        <th scope="col">Name</th>
+                        <th colspan="2" scope="col">Name</th>
                         <th scope="col">Email</th>
                         <th scope="col">Phone</th>
                         <th scope="col">Enroll Number</th>
-                        <th scope="col">Date of admission</th>
-                        <th scope="col"></th>
+                        <th colspan="2" scope="col">Date of admission</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td><img src="image/classe.svg" alt="icone-classe"></td>
-                        <td>username</td>
-                        <td>user@email.com</td>
-                        <td>7305477760</td>
-                        <td>1234567305477760</td>
-                        <td>08-Dec, 2021</td>
-                        <td>
-                            <img class="crayon" src="image/crayon.svg" alt="icone-modifier">
-                            <img src="image/poubelle.svg" alt="icone-supprimer">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><img src="image/classe.svg" alt="icone-classe"></td>
-                        <td>username</td>
-                        <td>user@email.com</td>
-                        <td>7305477760</td>
-                        <td>1234567305477760</td>
-                        <td>08-Dec, 2021</td>
-                        <td>
-                            <img class="crayon" src="image/crayon.svg" alt="icone-modifier">
-                            <img src="image/poubelle.svg" alt="icone-supprimer">
-                        </td>
-                    </tr>
+                    <?php foreach($students as $student){ ?>
+                        <tr>
+                            <td><img src="image/classe.svg" alt="icone-classe"></td>
+                            <?php foreach ($student as $key => $value){ ?>
+                                <td> <?php echo $value; ?> </td>
+                            <?php } ?>
+                            <td>
+                                <img class="crayon" src="image/crayon.svg" alt="icone-modifier">
+                                <img src="image/poubelle.svg" alt="icone-supprimer">
+                            </td>
+                        </tr>
+                    <?php } ?>
                 </tbody>
             </table>
         </div>
