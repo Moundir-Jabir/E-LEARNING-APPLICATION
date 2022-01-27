@@ -46,7 +46,7 @@
         </div>
     </nav>
     <div id="logout">
-        <a href="index.php">
+        <a href="../index.php">
             <span>Logout</span>
             <img src="image/Vector-6.svg" alt="icone-logout">
         </a>
