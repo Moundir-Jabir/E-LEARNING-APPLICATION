@@ -17,6 +17,10 @@ h2
     font-size: 22px;
     font-weight: bold;
 }
+#plus
+{
+    display: none;
+}
 #head img
 {
     margin-right: 20px;
@@ -67,4 +71,19 @@ table
 {
     border-collapse: separate;
     border-spacing: 0 15px;
+}
+
+@media (max-width: 767px) {
+    #add
+    {
+        display: none;
+    }
+    #plus
+    {
+        display: inline;
+    }
+    #head button
+    {
+        width: 45px;
+    }
 }
