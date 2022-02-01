@@ -1,14 +1,1 @@
-{
-    "students": [
-        {"name" : "Moundir", "email" : "mondirjabir@gmail.com", "phone" : "0623674588", "enroll_number" : 1234567305477760, "date_admission" : "08-Dec, 2021"},
-        {"name" : "Said", "email" : "said@gmail.com", "phone" : "0623994588", "enroll_number" : 1233405477760, "date_admission" : "08-Nov, 2021"},
-        {"name" : "Yassin", "email" : "yasin@gmail.com", "phone" : "0629999588", "enroll_number" : 344645477760, "date_admission" : "08-Dec, 2020"},
-        {"name" : "Hamza", "email" : "hamza@gmail.com", "phone" : "0699884588", "enroll_number" : 1567305477760, "date_admission" : "18-Dec, 2021"},
-        {"name" : "Ahmed", "email" : "ahmed@gmail.com", "phone" : "0623674008", "enroll_number" : 123456730560, "date_admission" : "08-Jan, 2021"}
-    ],
-    "payments": [
-        {"Name" : "Moundir", "Payment_Schedule" : "First", "Bill_Number" : 12223, "Amount_Paid" : "DHS 100,000", "Balance amount" : "DHS 500,000", "Date" : "05-Jan, 2022"},
-        {"Name" : "Said", "Payment_Schedule" : "Second", "Bill_Number" : 22223, "Amount_Paid" : "DHS 300,000", "Balance amount" : "DHS 100,000", "Date" : "15-Jan, 2022"},
-        {"Name" : "Ahmed", "Payment_Schedule" : "Third", "Bill_Number" : 44223, "Amount_Paid" : "DHS 400,000", "Balance amount" : "DHS 200,000", "Date" : "25-Jan, 2022"}
-    ]
-}
+{"payments":[{"Name":"Moundir","Payment_Schedule":"First","Bill_Number":12223,"Amount_Paid":"DHS 100,000","Balance amount":"DHS 500,000","Date":"05-Jan, 2022"},{"Name":"Said","Payment_Schedule":"Second","Bill_Number":22223,"Amount_Paid":"DHS 300,000","Balance amount":"DHS 100,000","Date":"15-Jan, 2022"},{"Name":"Ahmed","Payment_Schedule":"Third","Bill_Number":44223,"Amount_Paid":"DHS 400,000","Balance amount":"DHS 200,000","Date":"25-Jan, 2022"}],"students":[{"name":"Moundir Jabir","email":"moundirjabir@icloud.com","phone":"0623731085","enroll_number":1234567305477760,"date_admission":"08-Dec, 2021"},{"name":"Said Hasnaoui","email":"saidhasnaoui@gmail.com","phone":"0666778899","enroll_number":1233405477760,"date_admission":"08-Nov, 2021"},{"name":"Yassin","email":"yasin@gmail.com","phone":"0629999588","enroll_number":344645477760,"date_admission":"08-Dec, 2020"}]}

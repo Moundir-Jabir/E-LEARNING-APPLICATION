@@ -89,8 +89,8 @@
                                 <td> <?php echo $value; ?> </td>
                             <?php } ?>
                             <td>
-                                <img class="crayon" src="image/crayon.svg" alt="icone-modifier">
-                                <img src="image/poubelle.svg" alt="icone-supprimer">
+                                <a href="update_student.php?id=<?php echo $student['enroll_number'] ?>"><img class="crayon" src="image/crayon.svg" alt="icone-modifier"></a>
+                                <a href="delete_student.php?id=<?php echo $student['enroll_number'] ?>"><img src="image/poubelle.svg" alt="icone-supprimer"></a>
                             </td>
                         </tr>
                     <?php } ?>
