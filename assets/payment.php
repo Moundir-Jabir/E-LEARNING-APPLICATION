@@ -1,10 +1,6 @@
 <?php
-    $payments = [
-        ["Name" => "Moundir", "Payment_Schedule" => "First", "Bill_Number" => 12223, "Amount_Paid" => "DHS 100,000", "Balance amount" => "DHS 500,000", "Date" => "05-Jan, 2022"],
-        ["Name" => "Said", "Payment_Schedule" => "Second", "Bill_Number" => 22223, "Amount_Paid" => "DHS 300,000", "Balance amount" => "DHS 100,000", "Date" => "15-Jan, 2022"],
-        ["Name" => "Ahmed", "Payment_Schedule" => "Third", "Bill_Number" => 44223, "Amount_Paid" => "DHS 400,000", "Balance amount" => "DHS 200,000", "Date" => "25-Jan, 2022"],
-        ["Name" => "Hamza", "Payment_Schedule" => "Last", "Bill_Number" => 45512223, "Amount_Paid" => "DHS 200,000", "Balance amount" => "DHS 150,000", "Date" => "07-Fev, 2022"]
-    ];
+    include ('data/library.php');
+    $payments = get_payments();
 ?>
 
 <!DOCTYPE html>

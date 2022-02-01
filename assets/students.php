@@ -1,11 +1,22 @@
 <?php
-    $students = [
-        ["name" => "Moundir", "email" => "mondirjabir@gmail.com", "phone" => "0623674588", "enroll_number" => 1234567305477760, "date_admission" => "08-Dec, 2021"],
-        ["name" => "Said", "email" => "said@gmail.com", "phone" => "0623994588", "enroll_number" => 1233405477760, "date_admission" => "08-Nov, 2021"],
-        ["name" => "Yassin", "email" => "yasin@gmail.com", "phone" => "0629999588", "enroll_number" => 344645477760, "date_admission" => "08-Dec, 2020"],
-        ["name" => "Hamza", "email" => "hamza@gmail.com", "phone" => "0699884588", "enroll_number" => 1567305477760, "date_admission" => "18-Dec, 2021"],
-        ["name" => "Ahmed", "email" => "ahmed@gmail.com", "phone" => "0623674008", "enroll_number" => 123456730560, "date_admission" => "08-Jan, 2021"]
+    include ('data/library.php');
+    $students = get_students();
+
+    $name = $_POST['name'] ?? "";
+    $email = $_POST['email'] ?? "";
+    $phone = $_POST['phone'] ?? "";
+    $enroll = random_int(0,100000);
+    $date = date("F j, Y");
+    $new = [
+        "name" => $name,
+        "email" => $email,
+        "phone" => $phone,
+        "enroll_number" => $enroll,
+        "date_admission" => $date
     ];
+    if($_SERVER['REQUEST_METHOD'] === 'POST'){
+        add_student($new);
+    }
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +43,31 @@
             </div>
             <div>
                 <img src="image/fleches.svg" alt="deux-fleche">
-                <button><span id="add">ADD NEW STUDENT</span><i id="plus" class="fas fa-user-plus"></i></button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><span id="add">ADD NEW STUDENT</span><i id="plus" class="fas fa-user-plus"></i></button>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 class="modal-title" id="exampleModalLabel">ADD NEW STUDENT</h3>
+                            </div>
+                            <div class="modal-body">
+                                <form action="students.php" method="POST">
+                                    <div class="mb-3">
+                                        <input type="text" required class="form-control form-control-lg" placeholder="name" name="name">
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="email" required class="form-control form-control-lg" placeholder="e-mail" name="email">
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="text" required class="form-control form-control-lg" placeholder="phone" name="phone">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Add</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div> <hr>
         <div class="table-responsive">
