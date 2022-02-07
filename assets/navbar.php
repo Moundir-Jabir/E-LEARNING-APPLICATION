@@ -15,7 +15,7 @@
             </a>
         </div>
         <div>
-            <a href="">
+            <a href="courses.php">
                 <img src="image/Vector-2.svg" alt="icone-course">
                 <span>Course</span>
             </a>
@@ -46,7 +46,7 @@
         </div>
     </nav>
     <div id="logout">
-        <a href="../index.php">
+        <a href="logout.php">
             <span>Logout</span>
             <img src="image/Vector-6.svg" alt="icone-logout">
         </a>

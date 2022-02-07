@@ -3,14 +3,13 @@
     $name = $_POST['name'] ?? "";
     $email = $_POST['email'] ?? "";
     $phone = $_POST['phone'] ?? "";
-    include ('data/library.php');
-    $student = get_student_by_id($id);
+    $solde = $_POST['solde'] ?? "";
+    require('database/models/student.php');
+    $item = new Student();
+    $student = $item->getStudentById($id);
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
-        $student['name'] = $name;
-        $student['email'] = $email;
-        $student['phone'] = $phone;
-        print_r($student);
-        update_student($student);
+        $item->updateStudent($id, $name, $email, $phone, $solde);
+        header("Location: students.php");
     }
 ?>
 
@@ -31,13 +30,20 @@
                 <h1>Update Student</h1> <br>
                 <form action="update_student.php?id=<?php echo $id ?>" method="POST">
                     <div class="mb-3">
-                        <input type="text" required class="form-control form-control-lg" placeholder="name" name="name" value="<?php echo $student['name'] ?>">
+                        <label class="form-label" for="name">Name :</label>
+                        <input type="text" id="name" required class="form-control form-control-lg" placeholder="name" name="name" value="<?php echo $student->name; ?>">
                     </div>
                     <div class="mb-3">
-                        <input type="email" required class="form-control form-control-lg" placeholder="e-mail" name="email" value="<?php echo $student['email'] ?>">
+                        <label class="form-label" for="email">E-mail :</label>
+                        <input type="email" id="email" required class="form-control form-control-lg" placeholder="e-mail" name="email" value="<?php echo $student->email; ?>">
                     </div>
                     <div class="mb-3">
-                        <input type="text" required class="form-control form-control-lg" placeholder="phone" name="phone" value="<?php echo $student['phone'] ?>">
+                        <label class="form-label" for="phone">Phone :</label>
+                        <input type="text" id="phone" required class="form-control form-control-lg" placeholder="phone" name="phone" value="<?php echo $student->phone; ?>">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="solde">Solde :</label>
+                        <input type="number" id="solde" required class="form-control form-control-lg" placeholder="solde" name="solde" value="<?php echo $student->solde; ?>">
                     </div>
                     <button type="submit" class="btn btn-primary">Update</button>
                 </form>

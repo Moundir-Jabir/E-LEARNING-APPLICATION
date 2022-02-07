@@ -1,6 +1,11 @@
 <?php
-    include ('data/library.php');
-    $payments = get_payments();
+    session_start();
+    require ('../session/library.php');
+    redirection_login();
+    
+    require('database/models/payment.php');
+    $item = new Payment();
+    $payments = $item->getPayments();
 ?>
 
 <!DOCTYPE html>
@@ -43,9 +48,12 @@
                 <tbody class="table-light">
                     <?php foreach($payments as $payment){ ?>
                         <tr>
-                            <?php foreach ($payment as $key => $value){ ?>
-                                <td> <?php echo $value; ?> </td>
-                            <?php } ?>
+                            <td><?php echo $payment->name ?></td>
+                            <td><?php echo $payment->payment_schedule ?></td>
+                            <td><?php echo $payment->bill_number ?></td>
+                            <td>DHS <?php echo $payment->amount_paid ?></td>
+                            <td>DHS <?php echo $payment->balance_amount ?></td>
+                            <td><?php echo $payment->date ?></td>
                             <td><img src="image/oeuil.svg" alt="icone-oeuil"></td>
                         </tr>
                     <?php } ?>

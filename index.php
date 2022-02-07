@@ -1,3 +1,27 @@
+<?php
+    session_start();
+    $status = "";
+?>
+
+<?php
+    require('session/config.php');
+    require('session/library.php');
+
+    if($_SERVER['REQUEST_METHOD'] === 'POST'){
+        $email = htmlspecialchars($_POST['email']) ?? "";
+        $password = htmlspecialchars($_POST['password']) ?? "";
+        if(authenticate($email,$password)){
+            $_SESSION['email'] = $email;
+            header("Location: assets/home.php");
+            die();
+        }else{
+            $status = "vérifier vos infos !!";
+        }
+    }
+
+    redirection_admin();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,14 +40,19 @@
                 <h1>E-classe</h1>
                 <p id="sign-in">SIGN IN</p>
                 <p id="enter">Enter your credentials to access your account</p>
-                <form action="assets/home.php">
+                <?php if($status != ""){ ?>
+                    <div class="alert alert-danger">
+                        <?php echo $status ?>
+                    </div>
+                <?php } ?>
+                <form action="" method="POST">
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
-                        <input type="email" required class="form-control form-control-lg" id="email" placeholder="Enter your email">
+                        <input type="email" required class="form-control form-control-lg" name="email" id="email" placeholder="Enter your email">
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
-                        <input type="password" required class="form-control form-control-lg" id="password" placeholder="Enter your password">
+                        <input type="password" required class="form-control form-control-lg" name="password" id="password" placeholder="Enter your password">
                     </div>
                     <div class="d-grid gap-2">
                         <button type="submit">SIGN IN</button>

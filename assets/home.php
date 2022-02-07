@@ -1,3 +1,14 @@
+<?php
+    session_start();
+    require ('../session/library.php');
+    redirection_login();
+
+    require('database/models/count.php');
+    $count = new Count();
+    $nbr_student = $count->countStudent();
+    $nbr_course = $count->countCourse();
+    $nbr_payment = $count->countPayment();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,22 +31,22 @@
                 <div id="student" class="col-lg col-md-3 col-sm-5 col-11 case">
                     <img src="image/1.svg" alt="student">
                     <p>Students</p>
-                    <h2>243</h2>
+                    <h2><?php echo $nbr_student; ?></h2>
                 </div>
                 <div id="course" class="col-lg col-md-3 col-sm-5 col-11 case">
                     <img src="image/2.svg" alt="course">
                     <p>Course</p>
-                    <h2>13</h2>
+                    <h2><?php echo $nbr_course; ?></h2>
                 </div>
                 <div id="payment" class="col-lg col-md-3 col-sm-5 col-11 case">
                     <img src="image/3.svg" alt="payments">
                     <p>Payments</p>
-                    <h2>DHS 556,000</h2>
+                    <h2>DHS <?php echo $nbr_payment; ?></h2>
                 </div>
                 <div id="user" class="col-lg col-md-3 col-sm-5 col-11 case">
                     <img src="image/4.svg" alt="user">
                     <p>Users</p>
-                    <h2>3</h2>
+                    <h2>1</h2>
                 </div>
             </div>
         </div>
