@@ -4,18 +4,15 @@
 ?>
 
 <?php
-    require('session/config.php');
     require('session/library.php');
 
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $email = htmlspecialchars($_POST['email']) ?? "";
         $password = htmlspecialchars($_POST['password']) ?? "";
         if(authenticate($email,$password)){
-            $_SESSION['email'] = $email;
             header("Location: assets/home.php");
-            die();
         }else{
-            $status = "vérifier vos infos !!";
+            $status = "email ou mot de passe incorect !!";
         }
     }
 

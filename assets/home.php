@@ -2,12 +2,12 @@
     session_start();
     require ('../session/library.php');
     redirection_login();
-
     require('database/models/count.php');
     $count = new Count();
     $nbr_student = $count->countStudent();
     $nbr_course = $count->countCourse();
     $nbr_payment = $count->countPayment();
+    $nbr_user = $count->countUser();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,7 +46,7 @@
                 <div id="user" class="col-lg col-md-3 col-sm-5 col-11 case">
                     <img src="image/4.svg" alt="user">
                     <p>Users</p>
-                    <h2>1</h2>
+                    <h2><?php echo $nbr_user; ?></h2>
                 </div>
             </div>
         </div>

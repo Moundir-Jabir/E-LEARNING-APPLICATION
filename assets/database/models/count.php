@@ -36,4 +36,16 @@ class Count extends DataProvider {
         $db = null;
         return $data;
     }
+
+    public function countUser(){
+        $db = $this->connect();
+        if($db == null){
+            return;
+        }
+        $query = $db->query('SELECT COUNT(*) FROM comptes');
+        $data = $query->fetchColumn();
+        $query = null;
+        $db = null;
+        return $data;
+    }
 }

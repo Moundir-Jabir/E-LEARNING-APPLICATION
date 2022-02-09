@@ -4,7 +4,7 @@
     </div>
     <div>
         <img src="image/youcode.png" alt="youcode" id="youcode" class="img-fluid">
-        <p id="name">Admin name</p>
+        <p id="name"><?php echo $_SESSION['user']->name; ?></p>
         <p id="admin">Admin</p>
     </div>
     <nav>
