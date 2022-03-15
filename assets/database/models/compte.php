@@ -17,4 +17,26 @@ class Compte extends DataProvider {
         $db = null;
         return $data;
     }
+
+    public function addCompte($name, $email, $password){
+        $db = $this->connect();
+        if($db == null){
+            return;
+        }
+        $sql = "INSERT INTO comptes (name, email, password) VALUES (:name, :email, :password)";
+        $smt = $db->prepare($sql);
+        try{
+            $smt->execute([
+                ":name" => $name,
+                ":email" => $email,
+                ":password" => $password
+            ]);
+            return "bien";
+        }
+        catch(Exception $e){
+            return $e;
+        }
+        $smt = null;
+        $db = null;
+    }
 }

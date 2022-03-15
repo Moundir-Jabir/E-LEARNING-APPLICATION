@@ -62,3 +62,7 @@ a
 {
     color: var(--blue);
 }
+span{
+    float: right;
+    color: red;
+}
