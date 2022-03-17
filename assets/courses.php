@@ -112,6 +112,18 @@
                 </div>
             </div>
         </div>
+        <div class="modal fade <?php echo $displayD; ?>" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="exampleModalLabel">ARE YOU SURE TO DELETE THIS COURSE</h3>
+                    </div>
+                    <div class="modal-body">
+                        <a href="delete_course.php?id=<?php echo $deleteId; ?>"><button class="btn btn-primary">Confirm</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="table-responsive">
             <table class="table table-borderless">
                 <thead>
@@ -132,18 +144,6 @@
                             <td>
                                 <a href="courses.php?id=<?php echo $course->course_number; ?>"><img class="crayon" src="image/crayon.svg" alt="icone-modifier"></a>
                                 <a href="courses.php?delete=<?php echo $course->course_number; ?>"><img class="click" data-bs-toggle="modal" data-bs-target="#<?php echo $course->course_number; ?>" src="image/poubelle.svg" alt="icone-supprimer"></a>
-                                <div class="modal fade <?php echo $displayD; ?>" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h3 class="modal-title" id="exampleModalLabel">ARE YOU SURE TO DELETE THIS COURSE</h3>
-                                            </div>
-                                            <div class="modal-body">
-                                                <a href="delete_course.php?id=<?php echo $deleteId; ?>"><button class="btn btn-primary">Confirm</button></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </td>
                         </tr>
                     <?php } ?>
